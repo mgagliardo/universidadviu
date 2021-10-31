@@ -68,6 +68,11 @@ media <- mean(dat2$Diam1)
 
 desv <- sd(dat2$Diam1)
 
+plot(duration ~ waiting, data = faithful)
+abline(lm(duration ~ waiting, data = faithful))
+
+
+
 plot(media ~ desv, data = dat2)
-abline(v=c(media-desv, media, media+desv), col=2)
+abline(v=c(media - desv, media, media + desv), data = dat2col=2)
 abline(v=median(dat2$Diam1), col=3)
