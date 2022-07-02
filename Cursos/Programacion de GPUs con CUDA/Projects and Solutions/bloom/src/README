@@ -1,0 +1,37 @@
+PROBABILISTIC BLOOM FILTER
+==========================
+
+
+///////////////////////////////////
+//      0. Documentation         //
+///////////////////////////////////
+
+This README files contains general information of the PBF program, including directory layout, build and run instructions. In addition, you can find detailed documentation of the source code by opening in a web browser the following file:
+
+doc/html/index.html
+
+
+///////////////////////////////////
+//      I. PBF program           //
+///////////////////////////////////
+
+This program implements the probabilistic bloom filter algorithm using different methods. It includes a random sequence generator to create input files consisting of a specified probability density function. The distributions supported are: uniform, normal, poisson, and random. Implementation versions consist of a CPU (baseline) version, a parallel CPU (OpenMP) version, a GPU (baseline) version, and an improved GPU version. 
+
+Note: during the creation of this software, several issues came up with running GPU versions successfully always. We provided several scripts to attempt to run the programs. We will continue working on these issues after the course terminates since we found that other methods should provide additional efficiency.
+
+
+///////////////////////////////////
+//      II. Source tree          //
+///////////////////////////////////
+
+The PBF project submission is composed of the following files.
+
+1. doc/ - directory with detailed html documenation 
+2. makefiles - uses to build binaries
+3. main file - driver file for random sequence generator 
+4. shell script files - preset commands to run the different implementations
+5. .cu, .h - source and header files
+6. statistics files - output files used for plotting PBF results
+7. bin/ - contains executable files after compilation process
+8. matlab/ - MATLAB scripts used for plots
+

@@ -1,0 +1,21 @@
+
+#ifndef BFSKERNELS_HU
+#define BFSKERNELS_HU
+
+#include "bfs.hpp"
+
+#define BLOCK_SIZE 256
+#define GENERATE_BLOCK_SIZE 12
+
+void scoreCascadeWrapper(treenode* lowerLevel, treenode* upperLevel,
+        unsigned int lowerLevelSize, unsigned int upperLevelSize, bool p1);
+
+// Returns the number of boards in the next level
+unsigned generateWrapper( treenode *baseStates, unsigned numBaseStates,
+        treenode *nextStates, unsigned numNextStates, bool player1);
+
+void evaluateLeavesWrapper(treenode* leaves, unsigned int numLeaves);
+
+
+#endif
+

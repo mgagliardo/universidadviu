@@ -1,0 +1,22 @@
+This folder's code is used for recovering a password by brute force method of 
+generating all possible combinations of password.
+
+HOW TO USE:
+make - compiles the code
+make clean - removes compilation
+
+TO RUN ON GEM CLUSTER:
+submitjob ./brute pass
+
+Will attempt to find "pass" and the output will tell how long it took.
+Maxes out at 7 letter passwords currently, if more wish to be tried,
+edit line 53 to pass in a differnt number to "find_pass"
+
+
+
+TO RUN CPU VERSION:
+cd cpu
+make
+submitjob ./brute_cpu pass
+
+Will attempt to find "pass" via serial code

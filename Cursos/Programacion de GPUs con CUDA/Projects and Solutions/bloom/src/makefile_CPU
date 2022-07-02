@@ -1,0 +1,68 @@
+# makefile for snapshots program.
+# CC - compiler to use
+CC=nvcc
+
+# LDFLAGS - linker options
+LDFLAGS=
+
+# CFLAGS - compiler options
+# -Wall = turn on most warnings
+# -Wextra = warn about type limits
+# -g = compiles with debug info
+# -pg = create gmon.out for gprof
+CFLAGS=-O3
+
+# INCLUDES - define directories containing header files in addition to /usr/include
+# Example: INCLUDES=-I/dir1 -I/dir2
+INCLUDES=
+
+# LFLAGS - define library paths in addition to /usr/lib
+# Example: LFLAGS=-L/dir1 -L/dir2
+LFLAGS=
+
+# LIBS - define libraries to link into executable
+# -lm = math library
+LIBS=-lm -lcudart 
+#-lcurand -lcublas
+
+# SOURCES - source files to compile
+SOURCES=CPU/pbfcpu.cu rng.cu support.cu hash.cu pbf.cu parseArgs.cu
+
+# OBJECTS - object files to link
+# This uses a suffix replacement rule within a macro:
+#  $(name:string1=string2)
+#	For each word in 'name' replace 'string1' with 'string2'
+OBJECTS=$(SOURCES:.cu=.o)
+
+# TARGETDIR - target directory to place executable file
+TARGETDIR=bin/
+
+# EXE - executable file
+EXE=pbfCPU
+
+all: $(TARGETDIR) $(EXE)
+	@echo "Build complete: $(TARGETDIR)$^"
+	@rm $(OBJECTS)
+
+# $@ - name of target rule (in this case, $(EXE))
+$(EXE): $(OBJECTS)
+	$(CC) $(CFLAGS) $(LDFLAGS) $(INCLUDES) $(LFLAGS) $^ $(LIBS) -o $(TARGETDIR)$@
+	@echo "Linking complete"
+
+# This is a suffix replacement rule for building .o's from .c's
+# It uses automatic variables
+#	$< - name of the first prerequisite of the rule (.cu file)
+#	$@ - name of target rule (.o file)
+%.o: %.cu
+	$(CC) $(CFLAGS) $(INCLUDES) -c $^ -o $@
+	@echo "Compilation complete"
+
+$(TARGETDIR):
+	@mkdir $@
+
+clean:
+	@rm $(TARGETDIR)$(EXE)
+
+rebuild: clean all
+
+

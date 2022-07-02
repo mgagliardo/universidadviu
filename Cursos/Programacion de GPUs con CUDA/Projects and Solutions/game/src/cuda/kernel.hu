@@ -1,0 +1,16 @@
+#ifndef KERNEL_HU_
+#define KERNEL_HU_
+#include "checkersboard.cpp"
+#include "bfs.hpp"
+using namespace std;
+__global__ void getNextBoard(const CheckersBoard* boardsToExpand, CheckersBoard* nextBoard, int* thisBoardsScore);
+struct moveArgs{
+    const CheckersBoard* board;
+    unsigned int startIndex;
+    unsigned int hop1;
+    unsigned int hop2;
+};
+
+#endif
+
+
