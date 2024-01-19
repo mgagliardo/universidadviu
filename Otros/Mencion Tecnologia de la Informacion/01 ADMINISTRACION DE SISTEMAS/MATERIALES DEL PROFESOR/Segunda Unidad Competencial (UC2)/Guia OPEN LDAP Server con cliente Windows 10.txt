@@ -1,0 +1,152 @@
+Guia: OPEN LDAP Server con cliente Windows 10
+
+Instalar OpenLDAP Server y utilidades
+
+	sudo apt-get install slapd ldap-utils
+
+Configuracion base
+
+	nano /etc/ldap/ldap.conf
+		BASE	dc=wilfredo,dc=local
+		URI	ldap://172.31.0.254:389 (IP DEL SERVIDOR)
+
+Reconfigurar el dominio
+
+	sudo dpkg-reconfigure slapd
+		Omit LDAP configuration: No
+		DNS Domanin: wilfredo.local
+		Organization Name: Wilfredo
+		Administrator Password: 
+		MDB backend (Motor de busqueda)
+		Remove database when slapd will be purged: No
+		Files in /var/lib/ldap: Yes
+
+	sudo systemctl restart slapd
+	sudo systemctl status slapd
+
+	
+Anadir basedn para Usuarios and Grupos mediante un archivo LDIF
+	
+	$ nano basedn.ldif
+	dn: ou=personas,dc=wilfredo,dc=local
+	objectClass: organizationalUnit
+	ou: personas
+
+	dn: ou=grupos,dc=wilfredo,dc=local
+	objectClass: organizationalUnit
+	ou: grupos
+
+	
+	$ sudo ldapadd -x -D cn=admin,dc=wilfredo,dc=local -W -f basedn.ldif
+	.......
+	Enter LDAP Password:
+	adding new entry "ou=personas,dc=wilfredo,dc=local"                
+	adding new entry "ou=grupos,dc=wilfredo,dc=local"
+	
+Anadir usuarios y grupos
+
+	1. Generar un password:
+	$ slappasswd
+	New password: 
+	Re-enter new password: 
+	{SSHA}5D94oKzVyJYzkCq21LhXDZFNZpPQD9uE	
+
+pD8eAQDSEZbjeVSTskz/w3kYRp8NN0f3
+
+	2. Crear un archivo LDIF para anadir usuarios
+	$ nano ldapusers.ldif
+	dn: uid=usuariox1,ou=personas,dc=wilfredo,dc=local
+	objectClass: inetOrgPerson
+	objectClass: posixAccount
+	objectClass: shadowAccount
+	cn: Usuario
+	sn: X1
+	userPassword: {SSHA}5D94oKzVyJYzkCq21LhXDZFNZpPQD9uE
+	loginShell: /bin/bash
+	homeDirectory: /home/usuariox1
+	uidNumber: 3000
+	gidNumber: 3000
+
+	3. Aplicar configuracion
+	$ ldapadd -x -D cn=admin,dc=wilfredo,dc=local -W -f ldapusers.ldif 
+	Enter LDAP Password: 
+	adding new entry "uid=usuariox1,ou=personas,dc=wilfredo,dc=local"
+
+	4. Crear un archivo LDIF para anadir grupos
+	$ nano ldapgroups.ldif
+	dn: cn=usuariox1,ou=grupos,dc=wilfredo,dc=local
+	objectClass: posixGroup
+	cn: usuariox1
+	gidNumber: 3000
+	memberUid: usuariox1
+
+	$ ldapadd -x -D cn=admin,dc=wilfredo,dc=local -W -f ldapgroups.ldif
+	Enter LDAP Password: 
+	 adding new entry "cn=usuariox1,ou=grupos,dc=wilfredo,dc=local"
+	 
+
+EJEMPLOS DE COMANDOS DE INTERES PARA OPENLDAP:
+
+root@debian8:/usr/local/etc/openldap# ldapsearch -x -h localhost -b "dc=example,dc=com" "*" | grep dn | cut -d' ' -f'2-'
+cn=Akakiy Zinberstein,dc=example,dc=com
+documentTitle=book1,dc=example,dc=com
+documentTitle=book2,dc=example,dc=com
+dc=example,dc=com
+
+root@debian8:/usr/local/etc/openldap# ldapdelete -D "cn=root,dc=example,dc=com" -w secretpw -h localhost -p 389 "cn=Akakiy Zinberstein,dc=example,dc=com"
+
+Al igual que todos los utilitarios ldap*, las opciones se interpretan de la siguiente forma: -D indica el DN con el cual autenticarse en el servidor (en este caso root); -w especifica la contraseÃ±a para dicho usuario; -h el nombre del servidor LDAP; y -p el puerto. Es posible ademÃ¡s forzar el uso del mecanismo de autenticaciÃ³n simple (en lugar de SASL) a travÃ©s de la opciÃ³n -x. 
+
+Si se desea que la contraseÃ±a no sea parte del comando, se debe utilizar la opciÃ³n -W, la cual hace que la herramienta solicite el ingreso de la contraseÃ±a del usuario de manera interactiva.
+
+***************************************************************************
+	 
+Windows 10 LDAP client: pGina
+	Requirement> connectivity with the server
+	
+	Install pGina (3.1.8)
+		Plugin selection: LDAP (Check: Autentication, Authorization, Gateway)
+		Configure: LDAP Host (172.31.0.254:389)
+		Search DN: cn=admin,dc=wilfredo,dc=local
+		admin password
+		Group DN Pattern: ...dc=wilfredo,dc=local
+		Enable: Search for DN:
+			Search Filter:uid=%u
+			Search Context(s): dc=wilfredo,dc=local
+
+	Plugin Order:
+		LDAP fisrt of all
+	
+	Apply
+	
+	Simulation: test 
+
+
+Instalar LDAP Account Manager
+
+	wget http://prdownloads.sourceforge.net/lam/ldap-account-manager_6.8-1_all.deb
+	sudo dpkg -i ldap-account-manager_6.8-1_all.deb
+
+	Si hay problemas con dependencias:
+	sudo apt -f install
+	sudo dpkg -i ldap-account-manager_6.8-1_all.deb
+
+	http://172.31.0.254/lam
+	
+		[LAM Configuration] -> Esquina superior derecha
+			[Edit Server Profiles]
+			Cambiar el Perfil "lam" (password por defecto: lam)
+			
+			-> Cambiar el password del perfil: Profile Password
+			-> Server Settings
+			-> Security Settings
+		
+		[Account Types]	
+			[Active Account Types]
+				-> LDAP suffix
+				-> List attributes
+		
+		Anadir cuentas de usuario y grupos con LDAP Account Manager (LAM)
+			[Personal]
+			[Unix]
+			[Shadow]

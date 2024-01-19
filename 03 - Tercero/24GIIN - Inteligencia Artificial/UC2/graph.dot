@@ -1,0 +1,35 @@
+strict graph test{
+    node [style=filled];
+    0 [fillcolor=red];
+    1 [fillcolor=yellow];
+    2 [fillcolor=yellow];
+    3 [fillcolor=green];
+    4 [fillcolor=yellow];
+    5 [fillcolor=green];
+    6 [fillcolor=red];
+    7 [fillcolor=yellow];
+    8 [fillcolor=red];
+
+    0 -- 1;
+    0 -- 2;
+    0 -- 3;
+    0 -- 4;
+    0 -- 5;
+    1 -- 0;
+    2 -- 0;
+    2 -- 3;
+    3 -- 0;
+    3 -- 2;
+    3 -- 6;
+    3 -- 8;
+    4 -- 0;
+    4 -- 5;
+    4 -- 6;
+    5 -- 0;
+    5 -- 4;
+    6 -- 3;
+    6 -- 4;
+    6 -- 7;
+    7 -- 6;
+    8 -- 3;
+}

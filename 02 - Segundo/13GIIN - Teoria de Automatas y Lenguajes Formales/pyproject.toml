@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "13giin - teoria de automatas y lenguajes formales"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "13giin _ teoria de automatas y lenguajes formales"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+SQLAlchemy = "^1.4.43"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

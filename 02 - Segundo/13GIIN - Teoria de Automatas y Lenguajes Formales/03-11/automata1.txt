@@ -1,0 +1,15 @@
+#estados
+s1,s2,s3
+#inicial
+s1
+#terminales
+s1,s3
+#alfabeto
+a,b,c
+#transiciones
+s1,a,s2
+s1,c,s3
+s2,a,s1
+s2,b,s3
+s2,c,s1
+s3,c,s3
