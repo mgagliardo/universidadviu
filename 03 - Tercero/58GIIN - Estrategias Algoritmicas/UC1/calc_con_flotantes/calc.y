@@ -50,9 +50,19 @@ void yyerror(const char *s) {
     fprintf(stderr, "Error sintáctico: %s\n", s);
 }
 
+
 // Main
 int main() {
     printf("Ingrese el cálculo (ESC para salir): ");
-    yyparse();
+    
+    // Ejecutar el cálculo inicial
+    while (yyparse()) {
+        if (yychar == ESCAPE) {
+            printf("Saliendo del programa...\n");
+            return 0; // Salir del programa si se presiona la tecla Escape
+        }
+        printf("Ingrese otro cálculo (ESC para salir): ");
+    }
+    
     return 0;
 }

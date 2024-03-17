@@ -8,7 +8,7 @@ DIGIT               [0-9]
 
 %% 
 
-(\.{DIGIT}+)|({DIGIT}+(\.{DIGIT}*)?([eE][+-]?[0-9]+)?)   {yylval.dval = atof(yytext); return NUMERO;}
+(\.{DIGIT}+)|({DIGIT}+(\.{DIGIT}*)?([eE][+-]?[0-9]+)?)   {yylval.dval = atof(yytext); return NUMERO;}   // Regex para numeros flotantes
 
 "+" {return SUMA;}
 "-" {return RESTA;}
@@ -19,7 +19,7 @@ DIGIT               [0-9]
 
 
 "\n"                { return FIN_LINEA; }
-[\t ]+              ; // Ignora espacios en blanco y tabulaciones
+[\t ]+              ;                                                                                   // Ignora espacios en blanco y tabulaciones
 [^\n\t ]            { return yytext[0]; } // Caracteres no reconocidos
 
 
