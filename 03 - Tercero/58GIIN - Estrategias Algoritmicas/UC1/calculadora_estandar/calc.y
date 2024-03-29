@@ -42,6 +42,7 @@ termino: NUMERO
 // Manejo de errores
 void yyerror(const char *s) {
     fprintf(stderr, "Error sintáctico: %s\n", s);
+    exit(1);
 }
 
 // Main
