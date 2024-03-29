@@ -4,7 +4,6 @@
 #include <stdbool.h>
 int yylex();
 void yyerror(const char *s);
-bool imprimirResultado = true; // Variable global para controlar la impresión del resultado
 %}
 
 %token NUMERO
@@ -12,11 +11,7 @@ bool imprimirResultado = true; // Variable global para controlar la impresión d
 
 %%
 
-linea: expresion FIN_LINEA {
-        if (imprimirResultado) {
-            printf("Resultado: %d\n", $1);
-        }
-}
+linea: expresion FIN_LINEA { printf("Resultado: %d\n", $1); }
      | FIN_LINEA
      ;
 
@@ -47,7 +42,6 @@ termino: NUMERO
 // Manejo de errores
 void yyerror(const char *s) {
     fprintf(stderr, "Error sintáctico: %s\n", s);
-    imprimirResultado = false; // No imprimir resultado si hay error
 }
 
 // Main
