@@ -19,7 +19,7 @@ DIGIT       [0-9]
 ")"         { return R_PAREN; }
 \n          { return FIN_LINEA; }
 [\t ]+      ; // Ignora espacios en blanco y tabulaciones
-"$"         {printf("Saliendo del programa..\n"); exit(1);}
+"$"         {printf("Saliendo del programa..\n"); exit(0);}
 
 
 %%
