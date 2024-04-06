@@ -1,4 +1,8 @@
+Inscripciones
 **/.DS_Store
 **/logisim
 **/*.mp4
-Inscripciones
+**/.vscode
+**/*.tab.c
+**/*.yy.c
+**/*.h
