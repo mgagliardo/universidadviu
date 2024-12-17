@@ -1,0 +1,25 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT 
+  (str(?nombre) as ?nombre)
+  (str(?poblacion) as ?poblacion)
+  ?areaEnKm2
+  ?latitud
+  ?longitud
+  ?añoDeFundacion
+  ?historia
+WHERE {
+  dbr:Valencia rdfs:label ?nombre;
+  dbo:populationTotal ?poblacion;
+  dbo:areaTotal ?area;
+  geo:lat ?latitud;
+  geo:long ?longitud;
+  dbp:establishedDate ?añoDeFundacion;
+  dbo:abstract ?historia.
+
+  BIND (?area / 1000000 AS ?areaEnKm2)
+
+  FILTER(LANG(?nombre) = "es")
+  FILTER(LANG(?historia) = "es")
+}
