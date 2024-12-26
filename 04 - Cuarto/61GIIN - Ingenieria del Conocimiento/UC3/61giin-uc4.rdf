@@ -1,0 +1,323 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4/"
+     xml:base="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:giin-uc4="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#esAutorDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#esAutorDe">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#tieneAutor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Autor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#esEditorialDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#esEditorialDe">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#tieneEditorial"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Editorial"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#sePresta -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#sePresta">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Prestamo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#tieneAutor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#tieneAutor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Autor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#tieneEditorial -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#tieneEditorial">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Editorial"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#tieneGenero -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#tieneGenero">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Genero"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#tienePrestamos -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#tienePrestamos">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#tomadoPor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Usuario"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Prestamo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#tomadoPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#tomadoPor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Prestamo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Usuario"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#fechaDeDevolucion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#fechaDeDevolucion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Prestamo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#fechaDeNacimiento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#fechaDeNacimiento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Autor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#fechaDePrestamo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#fechaDePrestamo">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#fechaDePublicacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#fechaDePublicacion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#fechaDeRegistro -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#fechaDeRegistro">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Editorial"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#isbn -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#isbn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Autor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Editorial"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Genero"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Usuario"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#titulo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#titulo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Autor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Autor"/>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Editorial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Editorial"/>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Genero -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Genero"/>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro"/>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Prestamo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Prestamo"/>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Usuario -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Usuario"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Autor1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Autor1">
+        <giin-uc4:esAutorDe rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro1"/>
+        <giin-uc4:esAutorDe rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro2"/>
+        <giin-uc4:fechaDeNacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1927-03-06</giin-uc4:fechaDeNacimiento>
+        <giin-uc4:nombre>Gabriel Garcia Marquez</giin-uc4:nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Editorial1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Editorial1">
+        <giin-uc4:esEditorialDe rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro1"/>
+        <giin-uc4:esEditorialDe rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro2"/>
+        <giin-uc4:nombre>Editorial XYZ</giin-uc4:nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Genero1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Genero1">
+        <giin-uc4:nombre>Novela</giin-uc4:nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro"/>
+        <giin-uc4:tieneAutor rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Autor1"/>
+        <giin-uc4:tieneEditorial rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Editorial1"/>
+        <giin-uc4:tieneGenero rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Genero1"/>
+        <giin-uc4:fechaDePublicacion rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1967</giin-uc4:fechaDePublicacion>
+        <giin-uc4:isbn>978-3-16-148410-0</giin-uc4:isbn>
+        <giin-uc4:nombre>Cien años de Soledad</giin-uc4:nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro"/>
+        <giin-uc4:tieneAutor rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Autor1"/>
+        <giin-uc4:tieneEditorial rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Editorial1"/>
+        <giin-uc4:tieneGenero rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Genero1"/>
+        <giin-uc4:fechaDePublicacion rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1955</giin-uc4:fechaDePublicacion>
+        <giin-uc4:isbn>978-3-16-148410-2</giin-uc4:isbn>
+        <giin-uc4:nombre>Relato de un náufrago</giin-uc4:nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Prestamo1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Prestamo1">
+        <giin-uc4:sePresta rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Libro1"/>
+        <giin-uc4:tomadoPor rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Usuario1"/>
+        <giin-uc4:fechaDeDevolucion rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-12-15</giin-uc4:fechaDeDevolucion>
+        <giin-uc4:fechaDePrestamo rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-12-01</giin-uc4:fechaDePrestamo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Usuario1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Usuario1">
+        <giin-uc4:tienePrestamos rdf:resource="http://www.semanticweb.org/gattes/ontologies/2024/11/61giin-uc4#Prestamo1"/>
+        <giin-uc4:fechaDeRegistro rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-15</giin-uc4:fechaDeRegistro>
+        <giin-uc4:nombre>Juan Perez</giin-uc4:nombre>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

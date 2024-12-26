@@ -1,0 +1,5 @@
+Considere el contenido del video disponible en https://www.youtube.com/watch?v=jLrMXfFjREw 
+en el cual se presenta las acciones para descargar protégé y crear una ontología.
+
+Se debe subir al campus virtual un fichero PDF en el que se detalle a través de capturas y
+explicaciones breves las operaciones realizadas para crear la ontología diseñada por Ud. en la Actividad 2.

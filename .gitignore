@@ -6,3 +6,7 @@ Inscripciones
 **/*.tab.c
 **/*.yy.c
 **/*.h
+**/uv.lock
+**/.venv
+**/.ipynb_checkpoints
+**/.python-version
