@@ -1,0 +1,32 @@
+root@459c7d1c7c67:/app# ./test_lzss.sh
+checking ./InputData/don-quixote.txt
+uncompressed size:	2166786
+compressed size:	1120504
+
+checking ./InputData/ecoli.fa
+uncompressed size:	4089209
+compressed size:	1487492
+
+checking ./InputData/imagen_1.raw
+uncompressed size:	4096
+compressed size:	4608
+
+checking ./InputData/imagen_2.raw
+uncompressed size:	4096
+compressed size:	500
+
+checking ./InputData/imagen_3.raw
+uncompressed size:	4096
+compressed size:	500
+
+checking ./InputData/imagen_4.raw
+uncompressed size:	4096
+compressed size:	508
+
+checking ./InputData/imagen_5.raw
+uncompressed size:	4096
+compressed size:	2015
+
+checking ./InputData/imagen_6.raw
+uncompressed size:	4096
+compressed size:	4432

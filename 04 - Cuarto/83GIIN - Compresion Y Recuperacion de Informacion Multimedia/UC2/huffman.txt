@@ -1,0 +1,40 @@
+root@459c7d1c7c67:/app# ./test_huffman.sh
+checking ./InputData/don-quixote.txt
+uncompressed size:	2166786
+traditional size:	1209135
+canonical size:		1209032
+
+checking ./InputData/ecoli.fa
+uncompressed size:	4089209
+traditional size:	1177553
+canonical size:		1177675
+
+checking ./InputData/imagen_1.raw
+uncompressed size:	4096
+traditional size:	5370
+canonical size:		4342
+
+checking ./InputData/imagen_2.raw
+uncompressed size:	4096
+traditional size:	784
+canonical size:		1026
+
+checking ./InputData/imagen_3.raw
+uncompressed size:	4096
+traditional size:	789
+canonical size:		1026
+
+checking ./InputData/imagen_4.raw
+uncompressed size:	4096
+traditional size:	1018
+canonical size:		1250
+
+checking ./InputData/imagen_5.raw
+uncompressed size:	4096
+traditional size:	1349
+canonical size:		1576
+
+checking ./InputData/imagen_6.raw
+uncompressed size:	4096
+traditional size:	2962
+canonical size:		3014

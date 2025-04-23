@@ -1,0 +1,40 @@
+root@459c7d1c7c67:/app# ./test_arcode.sh
+checking ./InputData/don-quixote.txt
+uncompressed size:		2166786
+static model compressed size:	1199888
+adaptive model compressed size:	1202452
+
+checking ./InputData/ecoli.fa
+uncompressed size:		4089209
+static model compressed size:	1101735
+adaptive model compressed size:	1115152
+
+checking ./InputData/imagen_1.raw
+uncompressed size:		4096
+static model compressed size:	4778
+adaptive model compressed size:	4141
+
+checking ./InputData/imagen_2.raw
+uncompressed size:		4096
+static model compressed size:	523
+adaptive model compressed size:	688
+
+checking ./InputData/imagen_3.raw
+uncompressed size:		4096
+static model compressed size:	652
+adaptive model compressed size:	814
+
+checking ./InputData/imagen_4.raw
+uncompressed size:		4096
+static model compressed size:	919
+adaptive model compressed size:	1078
+
+checking ./InputData/imagen_5.raw
+uncompressed size:		4096
+static model compressed size:	1207
+adaptive model compressed size:	1362
+
+checking ./InputData/imagen_6.raw
+uncompressed size:		4096
+static model compressed size:	2836
+adaptive model compressed size:	2876

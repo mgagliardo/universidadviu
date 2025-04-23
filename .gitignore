@@ -2,6 +2,7 @@ Inscripciones
 **/.DS_Store
 **/logisim
 **/*.mp4
+**/*.mov
 **/.vscode
 **/*.tab.c
 **/*.yy.c
@@ -10,3 +11,5 @@ Inscripciones
 **/.venv
 **/.ipynb_checkpoints
 **/.python-version
+**/.mov
+**/"84GIIN - Trabajo de Fin de Grado"
